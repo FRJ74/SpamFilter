@@ -4,7 +4,7 @@ const result = document.getElementById("result");
 const checkMessageButton = document.getElementById("check-message-btn");
 
 const helpRegex = /please help|assist me/i;
-let dollarRegex = /[0-9]+ hundred|thousand|million|billion dollars/i;
+let dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
 
 const denyList = [helpRegex, dollarRegex];
 
