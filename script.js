@@ -3,10 +3,13 @@ const messageInput = document.getElementById("message-input");
 const result = document.getElementById("result");
 const checkMessageButton = document.getElementById("check-message-btn");
 
+/* Regular Expressions */
 const helpRegex = /please help|assist me/i;
-let dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
+const dollarRegex = /[0-9]+\s*(?:hundred|thousand|million|billion)?\s+dollars/i;
+const freeRegex = /(?:\s|^)fr[e3][e3] m[o0]n[e3]y(?:$|\s)/i;
+const stockRegex = /[s5][t7][o0]ck al[e3]r[t7]/i;
 
-const denyList = [helpRegex, dollarRegex];
+const denyList = [helpRegex, dollarRegex, freeRegex, stockRegex];
 
 const isSpam = (msg) => denyList.some(regex => regex.test(msg));
 
